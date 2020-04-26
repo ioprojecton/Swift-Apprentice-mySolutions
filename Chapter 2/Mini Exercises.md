@@ -1,5 +1,5 @@
-### Create a string constant called firstName and initialize it to your first name.
-### Also create a string constant called lastName and initialize it to your last name.
+#### Create a string constant called firstName and initialize it to your first name.
+#### Also create a string constant called lastName and initialize it to your last name.
 
 ```
 
