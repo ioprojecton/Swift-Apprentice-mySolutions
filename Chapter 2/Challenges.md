@@ -104,6 +104,3 @@ numeric difference = double - float
 
 
 ```
-
-Excerpt From: By Ray Fix. “Swift Apprentice.” Apple Books. 
-Excerpt From: By Ray Fix. “Swift Apprentice.” Apple Books. 
