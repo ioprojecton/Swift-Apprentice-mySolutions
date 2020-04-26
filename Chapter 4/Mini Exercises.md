@@ -1,5 +1,5 @@
-####Create a constant named range, and set it equal to a range starting at 1 and ending with 10 inclusive.
-####Write a for loop that iterates over this range and prints the square of each number.
+#### Create a constant named range, and set it equal to a range starting at 1 and ending with 10 inclusive.
+#### Write a for loop that iterates over this range and prints the square of each number.
 
 ```
 let range = 1...10
@@ -10,8 +10,8 @@ for i in range {
 
 ```
 
-####Write a for loop to iterate over the same range as in the exercise above and print the square root of each number.
-####You’ll need to type convert your loop constant.
+#### Write a for loop to iterate over the same range as in the exercise above and print the square root of each number.
+#### You’ll need to type convert your loop constant.
 
 ```
 let range = 1...10
@@ -22,7 +22,7 @@ for i in range {
 
 ```
 
-####Above, you saw a for loop that iterated over only the even rows like so:
+#### Above, you saw a for loop that iterated over only the even rows like so:
 ```
 sum = 0
 for row in 0..<8 {
@@ -34,8 +34,8 @@ for row in 0..<8 {
   }
 }
 ```
-####Change this to use a where clause on the first for loop to skip even rows instead of using continue.
-####Check that the sum is 448 as in the initial example.
+#### Change this to use a where clause on the first for loop to skip even rows instead of using continue.
+#### Check that the sum is 448 as in the initial example.
 
 ```
 var sum = 0
@@ -49,9 +49,9 @@ for row in 0..<8 where row % 2 != 0{
 }
 ```
 
-####Write a switch statement that takes an age as an integer and prints out the life stage related to that age.
-####You can make up the life stages, or use my categorization as follows: 0-2 years, Infant; 3-12 years, 
-####Child; 13-19 years, Teenager; 20-39, Adult; 40-60, Middle aged; 61+, Elderly.
+#### Write a switch statement that takes an age as an integer and prints out the life stage related to that age.
+#### You can make up the life stages, or use my categorization as follows: 0-2 years, Infant; 3-12 years, 
+#### Child; 13-19 years, Teenager; 20-39, Adult; 40-60, Middle aged; 61+, Elderly.
 ```
 var age = 90
 
@@ -81,10 +81,10 @@ default:
 ```
 
 
-####Write a switch statement that takes a tuple containing a string and an integer.
-####The string is a name, and the integer is an age.
-####Use the same cases that you used in the previous exercise and let syntax to print out the name followed by the life stage.
-####For example, for myself it would print out "Matt is an adult.".
+#### Write a switch statement that takes a tuple containing a string and an integer.
+#### The string is a name, and the integer is an age.
+#### Use the same cases that you used in the previous exercise and let syntax to print out the name followed by the life stage.
+#### For example, for myself it would print out "Matt is an adult.".
 
 ```
 var input = ("Matt",30)
