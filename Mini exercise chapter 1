@@ -1,6 +1,6 @@
 ### Declare a constant of type Int called myAge and set it to your age.
 
-```
+```swift
 let myAge = 30
 
 ```
