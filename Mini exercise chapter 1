@@ -1,4 +1,4 @@
-“Declare a constant of type Int called myAge and set it to your age.
+### Declare a constant of type Int called myAge and set it to your age.
 
 ```
 let myAge = 30
