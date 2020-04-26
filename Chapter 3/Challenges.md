@@ -33,7 +33,7 @@ let answer = ((10 / 2) > 3) && ((10 % 2) == 0) // true
 #### Finally, calculate the final position taking into account the ladders and snakes, calling it nextPosition.
 
 ```
-et currentPosition = Int.random(in: 1...20)
+let currentPosition = Int.random(in: 1...20)
 
 let diceRoll = Int.random(in: 1...6)
 
