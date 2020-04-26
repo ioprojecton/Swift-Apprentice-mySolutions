@@ -175,21 +175,21 @@ var found = 0
 
 while from <= to {
 var found = 0
-  var dice = 1
-  while dice <= 6 {
-    var secondDice = 1
-    while secondDice <= 6 {
-      if dice + secondDice == from {
-        found += 1
-      }
-      secondDice += 1
-    }
-    dice += 1
-  }
+var dice = 1
+while dice <= 6 {
+var secondDice = 1
+while secondDice <= 6 {
+if dice + secondDice == from {
+ found += 1
+ }
+ secondDice += 1
+ }
+ dice += 1
+ }
 
-  print("\(from) (found)")
+ print("\(from) (found)")
 
-  from += 1
+ from += 1
 }
 
 ```
