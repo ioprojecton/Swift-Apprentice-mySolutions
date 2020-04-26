@@ -146,4 +146,3 @@ let root1 = (-b + (b * b - 4 * a * c).squareRoot()) / (2 * a)
 let root2 = (-b - (b * b - 4 * a * c).squareRoot()) / (2 * a)
 
 ```
-
