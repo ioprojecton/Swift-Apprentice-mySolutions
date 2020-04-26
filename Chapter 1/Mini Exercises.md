@@ -7,7 +7,7 @@ let myAge = 25
 ```
 
 ### Declare a variable of type Double called averageAge. Initially, set it to your own age.
-    Then, set it to the average of your age and my own age of 30.
+### Then, set it to the average of your age and my own age of 30.
 
 ```
 
