@@ -53,3 +53,33 @@ let readerBeforeAuthor = reader > author ? author : reader
 
 ````
 
+#### Create a constant named myAge and initialize it with your age. 
+#### Write an if statement to print out Teenager if your age is between 13 and 19, 
+#### and Not a teenager if your age is not between 13 and 19.
+
+```
+
+let myAge = 20
+
+if myAge > 13 && myAge < 19 {
+    print("Teenager")
+}
+else {
+    print("Not Teenager")
+}
+
+```
+
+
+#### Create a constant named answer and use a ternary condition to set it equal to the result you print out for the same cases in the above exercise. 
+#### Then print out answer.
+ 
+ ```
+let myAge = 10
+
+let answer = myAge > 13 && myAge < 19 ? "Teenager" : "Not Teenager"
+
+print(answer)
+
+ ```
+ 
