@@ -30,3 +30,128 @@ var array5 = [1, 2, 3]
 ```
 func removingOnce(_ item: Int, from array: [Int]) -> [Int]
 ```
+```
+func removingOnce(_ item: Int, from array: [Int]) -> [Int] {
+    guard !array.isEmpty else {
+        return []
+    }
+    
+    var newArray = array
+    
+    if let index = newArray.firstIndex(of: item){
+        newArray.remove(at: index)
+    }    
+    return newArray
+}
+```
+
+### Challenge 3: Remove the numbers
+#### Write a function that removes all occurrences of a given integer from an array of integers.
+#### This is the signature of the function:
+```
+func removing(_ item: Int, from array: [Int]) -> [Int]
+```
+```
+func removing(_ item: Int, from array: [Int]) -> [Int]{
+    
+    guard !array.isEmpty else {
+        return array
+    }
+    
+    var newArray = array
+    
+    for value in newArray{
+        if value == item {
+            newArray.remove(at: newArray.firstIndex(of: item)!)
+        }
+    }
+    return newArray
+}
+```
+
+### Challenge 4: Reverse an array
+#### Arrays have a reversed() method that returns an array holding the same elements as the original array, in reverse order.
+#### Write a function that does the same thing, without using reversed(). This is the signature of the function:
+```
+func reversed(_ array: [Int]) -> [Int]
+```
+```
+func reversed(_ array: [Int]) -> [Int]{
+
+var newArray:[Int] = []
+
+var counter = array.endIndex - 1
+
+for _ in array{
+    newArray.append(array[counter])
+    counter -= 1
+}
+
+return newArray
+    
+}
+```
+
+### Challenge 5: Return the middle
+#### Write a function that returns the middle element of an array.
+#### When array size is even, return the first of the two middle elememnts.
+```
+func middle(_ array: [Int]) -> Int?
+```
+```
+func middle(_ array: [Int]) -> Int? {
+    array[array.count / 2]
+}
+```
+
+### Challenge 6: Find the minimum and maximum
+#### Write a function that calculates the minimum and maximum value in an array of integers.
+#### Calculate these values yourself; don’t use the methods min and max.
+#### Return nil if the given array is empty.
+#### This is the signature of the function:
+```
+func minMax(of numbers: [Int]) -> (min: Int, max: Int)?
+```
+```
+func minMax(of numbers: [Int]) -> (min: Int, max: Int)? {
+    guard !numbers.isEmpty else {
+        return nil
+    }
+    
+    var min = numbers[0]
+    var max = numbers[0]
+    
+    for value in numbers{
+        if value > max {
+            max = value
+        }
+        if value < min {
+            min = value
+        }
+    }
+    return (min,max)
+}
+```
+
+### Challenge 7: Which is valid
+#### Which of the following are valid statements?
+```
+1. let dict1: [Int, Int] = [:]
+2. let dict2 = [:]
+3. let dict3: [Int: Int] = [:]
+```
+#### For the next four statements, use the following dictionary:
+```
+let dict4 = ["One": 1, "Two": 2, "Three": 3]
+4. dict4[1]
+5. dict4["One"]
+6. dict4["Zero"] = 0
+7. dict4[0] = "Zero
+```
+#### For the next three statements, use the following dictionary:
+```
+var dict5 = ["NY": "New York", "CA": "California"]
+8. dict5["NY"]
+9. dict5["WA"] = "Washington"
+10. dict5["CA"] = nil
+```
