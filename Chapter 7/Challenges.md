@@ -143,15 +143,110 @@ func minMax(of numbers: [Int]) -> (min: Int, max: Int)? {
 #### For the next four statements, use the following dictionary:
 ```
 let dict4 = ["One": 1, "Two": 2, "Three": 3]
-4. dict4[1]
-5. dict4["One"]
-6. dict4["Zero"] = 0
-7. dict4[0] = "Zero
+4. dict4[1] // invalid
+5. dict4["One"] // valid
+6. dict4["Zero"] = 0 // invalid
+7. dict4[0] = "Zero" // invalid
 ```
 #### For the next three statements, use the following dictionary:
 ```
 var dict5 = ["NY": "New York", "CA": "California"]
-8. dict5["NY"]
-9. dict5["WA"] = "Washington"
-10. dict5["CA"] = nil
+8. dict5["NY"] // valid
+9. dict5["WA"] = "Washington" // valid
+10. dict5["CA"] = nil // valid
+```
+
+### Challenge 8: Long names
+#### Given a dictionary with two-letter state codes as keys, and the full state names as values, 
+#### write a function that prints all the states with names longer than eight characters. 
+#### For example, for the dictionary ["NY": "New York", "CA": "California"], the output would be California.
+```
+func printStates (dictionary:[String:String]) {
+    for (_,value) in dictionary{
+        if value.count > 8 {
+            print(value)
+        }
+    }
+}
+```
+
+### Challenge 9: Merge dictionaries
+#### Write a function that combines two dictionaries into one. 
+#### If a certain key appears in both dictionaries, ignore the pair from the first dictionary.
+#### This is the function’s signature:
+```
+func merging(_ dict1: [String: String], with dict2: [String: String]) -> [String: String]
+```
+func merging(_ dict1: [String: String], with dict2: [String: String]) -> [String: String] {
+    guard !dict1.isEmpty && !dict2.isEmpty else{
+        return [:]
+    }  
+    var newDict = dict1
+    
+    for(key,value) in dict2{
+        newDict[key] = value
+    }
+    return newDict
+}
+
+### Challenge 10: Count the characters
+#### Declare a function occurrencesOfCharacters that calculates which characters occur in a string,
+#### as well as how often each of these characters occur. Return the result as a dictionary. This is the function signature:
+```
+func occurrencesOfCharacters(in text: String) -> [Character: Int]
+```
+#### Hint: String is a collection of characters that you can iterate over with a for statement.
+#### Bonus: To make your code shorter, dictionaries have a special subscript operator that let you add a default
+#### value if it is not found in the dictionary.
+#### For example, dictionary["a", default: 0] creates a 0 entry for the character "a" if it is not found instead of just returning nil.
+```
+func occurrencesOfCharacters(in text: String) -> [Character: Int]{
+    guard !text.isEmpty else {
+        return [:]
+    }
+    var newDict: [Character:Int] = [:]   
+    for characters in text{
+        if let x = newDict[characters]{
+            newDict[characters] = x+1
+            continue
+        }
+        newDict[characters] = 1
+    }
+    return newDict
+}
+```
+
+### Challenge 11: Unique values
+#### Write a function that returns true if all of the values of a dictionary are unique.
+#### Use a set to test uniqueness. This is the function signature:
+```
+func isInvertible(_ dictionary: [String: Int]) -> Bool
+```
+```
+func isInvertible(_ dictionary: [String: Int]) -> Bool{
+    guard !dictionary.isEmpty else{
+        return false
+    }
+    var newSet = Set<Int>()
+    
+    for (_,values) in dictionary{
+        if newSet.contains(values){
+            return false
+        }
+        else {
+            newSet.insert(values)
+        }
+    }
+    return true
+}
+```
+### Challenge 12: Removing keys and setting values to nil
+#### Given the dictionary:
+```
+var nameTitleLookup: [String: String?] = ["Mary": "Engineer", "Patrick": "Intern", "Ray": "Hacker"]
+```
+### Set the value of the key "Patrick" to nil and completely remove the key and value for "Ray".”
+```
+nameTitleLookup["Ray"] = nil
+nameTitleLookup.updateValue(nil, forKey: "Patrick")
 ```
