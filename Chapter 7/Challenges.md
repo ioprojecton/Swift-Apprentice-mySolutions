@@ -136,9 +136,9 @@ func minMax(of numbers: [Int]) -> (min: Int, max: Int)? {
 ### Challenge 7: Which is valid
 #### Which of the following are valid statements?
 ```
-1. let dict1: [Int, Int] = [:]
-2. let dict2 = [:]
-3. let dict3: [Int: Int] = [:]
+1. let dict1: [Int, Int] = [:] //invalid
+2. let dict2 = [:] //invalid
+3. let dict3: [Int: Int] = [:] //valid
 ```
 #### For the next four statements, use the following dictionary:
 ```
