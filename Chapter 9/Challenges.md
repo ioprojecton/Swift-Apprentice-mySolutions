@@ -133,7 +133,7 @@ var myStr2 = ""
 
 for (index,value) in newArray.enumerated(){
     myStr2.append(String(value.reversed()))
-    if index < newArray.count-1 {myStr2.append(" ")}
+    if index < newArray.endIndex - 1 {myStr2.append(" ")}
 }
 }
 ```
