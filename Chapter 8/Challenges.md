@@ -57,3 +57,20 @@ let appRatings = [
 #### Store this rating in the averageRatings dictionary. 
 #### Finally, use filter and map chained together to get a list of the app names whose average rating is greater than 3.
 ```
+let appRatings = [
+  "Calendar Pro": [1, 5, 5, 4, 2, 1, 5, 4],
+  "The Messenger": [5, 4, 2, 5, 4, 1, 1, 2],
+  "Socialise": [2, 1, 2, 2, 1, 2, 4, 2]
+]
+
+var averageRatings: [String: Double] = [:]
+
+appRatings.forEach{
+    let total = $0.value.reduce(0, + )
+    averageRatings[$0.key] = Double(total) / Double($0.value.count)
+}
+
+let goodApps = averageRatings
+    .filter {$0.value > 3}
+    .map {$0.key}
+```
