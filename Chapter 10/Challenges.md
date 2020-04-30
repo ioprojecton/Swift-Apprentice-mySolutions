@@ -5,7 +5,7 @@
 #### Implement an algorithm that receives a truck full of different kinds of fruits and places each fruit into the correct inventory container.
 #### Keep track of the total weight of fruit processed by the facility and print out how many of each fruit are in the inventory.
 ```
-//all solutions for this chapter taken from solutions provided with the book because problems were poorly described
+//solution for this challenge taken from solutions provided with the book because problems were poorly described
 // All kinds of fruit will share these attributes
 struct Fruit {
   let kind: String // e.g. Apple, Pear, Orange
@@ -62,58 +62,42 @@ print("Quantity of oranges:\t", oranges.count, "\n")
 #### Provide methods to calculate the cost of a shirt based on its attributes.
 ```
 // Author doesnt specify how exactly cost of the shirt must be calculated because of poor description
-typealias Size = String
-let small: Size = "Small"
-let medium: Size = "Medium"
-let large: Size = "Large"
-let xLarge: Size = "XLarge"
-
-typealias Material = String
-let cotton: Material = "Cotton"
-let polyester: Material = "Polyester"
-let wool: Material = "Wool"
-
-typealias Color = String
-
-struct TShirt {
-  let size: Size
-  let color: Color
-  let material: Material
-
-  func cost() -> Double {
-
-    let basePrice = 10.0
-
-    let sizeMultiplier: Double
-    switch size {
-    case small, medium:
-      sizeMultiplier = 1.0
-    case large, xLarge:
-      sizeMultiplier = 1.1
-    default:
-      // Special order!
-      sizeMultiplier = 1.2
+struct Tshirt{
+    var color: String
+    var size: Int
+    var material: String
+    func calculateCost() -> Int{
+        var cost = 0
+        
+        switch self.size{
+        case 0...1:
+            cost += 1
+        
+        case 2...3:
+        cost += 2
+        
+        case 3...5:
+            cost += 3
+            
+        default:
+            cost += 10
     }
-
-    let materialMultipler: Double
-    switch material {
-    case cotton:
-      materialMultipler = 1.0
-    case polyester:
-      materialMultipler = 1.1
-    case wool:
-      materialMultipler = 1.5
-    default:
-      // Special order!
-      materialMultipler = 2.0
+        
+        switch self.color{
+        case "red":
+            cost += 5
+            
+        case "blue":
+            cost += 20
+            
+        default:
+            cost += 10
+        }
+        
+        return cost
+        
     }
-
-    return basePrice * sizeMultiplier * materialMultipler
-  }
 }
-
-TShirt(size: medium, color: "Green", material: cotton).cost()
-TShirt(size: xLarge, color: "Gray", material: wool).cost()
 ```
 
 ### Challenge 3: Battleship
