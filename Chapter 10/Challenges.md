@@ -122,3 +122,66 @@ TShirt(size: xLarge, color: "Gray", material: wool).cost()
 #### Use an (x, y) coordinate system for your locations and model using a structure.
 #### Ships should also be modeled with structures. Record an origin, direction and length.
 #### Each ship should be able to report if a “shot” has resulted in a “hit”.
+```
+struct Coordinate {
+  let x: Int
+  let y: Int
+}
+
+struct Ship {
+  let origin: Coordinate
+  let direction: String
+  let length: Int
+
+  func isHit(coordinate: Coordinate) -> Bool {
+    if direction == "Right" {
+      return origin.y == coordinate.y &&
+             coordinate.x >= origin.x &&
+             coordinate.x - origin.x < length
+    } else {
+      return origin.x == coordinate.x &&
+             coordinate.y >= origin.y &&
+             coordinate.y - origin.y < length
+    }
+  }
+}
+
+struct Board {
+
+  var ships: [Ship] = []
+
+  func fire(location: Coordinate) -> Bool {
+    for ship in ships {
+      if ship.isHit(coordinate: location) {
+        print("Hit!")
+        return true
+      }
+    }
+
+    return false
+  }
+}
+
+let patrolBoat = Ship(origin: Coordinate(x: 2, y: 2), direction: "Right", length: 2)
+let battleship = Ship(origin: Coordinate(x: 5, y: 3), direction: "Down", length: 4)
+let submarine = Ship(origin: Coordinate(x: 0, y: 0), direction: "Down", length: 3)
+
+/*:
+  Set up the board.
+  */
+
+var board = Board()
+board.ships.append(contentsOf: [patrolBoat, battleship, submarine])
+
+/*:
+ Play the game.
+ */
+
+board.fire(location: Coordinate(x: 2, y: 2)) // Hit on the patrolBoat
+
+board.fire(location: Coordinate(x: 2, y: 3)) // Miss...
+
+board.fire(location: Coordinate(x: 5, y: 6)) // Hit on the battleship
+
+board.fire(location: Coordinate(x: 5, y: 7)) // Miss...
+```
