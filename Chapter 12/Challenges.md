@@ -33,7 +33,8 @@ struct Circle {
         radius = (newValue / .pi).squareRoot()
     }
     }
-    mutating func grow(byFactor:Double) {
+    mutating func grow(byFactor:Double) { // for this function to be able to change properties of the instance it needs to be 
+    // mutating function
         self.area *= byFactor  // by calling grow method area should be set to whatever it is * factor
     }
    
