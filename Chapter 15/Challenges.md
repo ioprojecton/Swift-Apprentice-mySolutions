@@ -73,8 +73,8 @@ let movements: [Direction] = [.north, .north, .west, .south,
 var location = (x: 0, y: 0)
 ```
 ```
-for movement in movements {
-  switch movement {
+for coordinates in movements {
+  switch coordinates {
   case .north:
     location.y += 1
   case .south:
