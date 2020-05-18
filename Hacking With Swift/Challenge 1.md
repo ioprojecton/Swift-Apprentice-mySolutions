@@ -8,7 +8,7 @@
 ##### • The string “Hello, world” should return false because of the double Ls and double Os.
 
 #### Solution
-```
+```Swift
 func challenge1(input: String) -> Bool{
 
     return input.count == Set(input).count
