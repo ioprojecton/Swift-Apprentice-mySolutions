@@ -9,3 +9,10 @@
 ##### • The string “Hello, world” should return false because it reads “dlrow ,olleH” backwards.
 
 #### Solution
+```Swift
+func challenge1(input: String) -> Bool{
+    
+    return input.lowercased() == String(input.lowercased().reversed())
+    
+}
+```
