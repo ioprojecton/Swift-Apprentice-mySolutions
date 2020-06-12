@@ -6,3 +6,7 @@
 ## My solutions to Swift Apprentice 5th edition
 
 https://store.raywenderlich.com/products/swift-apprentice
+
+Surepic_18ND4usDJNHQtrBP8ysoNBzd6jZTsd8poV
+
+eff8925f919631eeeff8925f919631ee
